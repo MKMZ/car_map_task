@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatButtonModule, MatSidenavModule, MatTableModule, MatPaginatorModule, 
+  MatSortModule, MatToolbarModule} from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table';
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +11,14 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
