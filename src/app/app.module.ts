@@ -3,8 +3,15 @@ import { NgModule } from '@angular/core';
 import {MatButtonModule, MatSidenavModule, MatTableModule, MatPaginatorModule, 
   MatSortModule, MatToolbarModule} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
+import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
+import {StoreModule} from '@ngrx/store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { AppComponent } from 'app/app.component';
+import { routes } from 'app/shared/common/routes';
+import { reducers } from 'app/shared/common/meta.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +25,15 @@ import { AppComponent } from './app.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    CdkTableModule
+    CdkTableModule,
+    StoreModule.forRoot(reducers),
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true }
+    ),
+    StoreRouterConnectingModule,
+    EffectsModule.forRoot([
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
