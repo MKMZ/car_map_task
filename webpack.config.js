@@ -66,14 +66,14 @@ module.exports = {
       ".js"
     ],
     "modules": [
-      "./node_modules",
+      "./src",
       "./node_modules"
     ],
     "symlinks": true
   },
   "resolveLoader": {
     "modules": [
-      "./node_modules",
+      "./src",
       "./node_modules"
     ]
   },
