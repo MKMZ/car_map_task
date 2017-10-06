@@ -12,10 +12,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from 'app/app.component';
 import { routes } from 'app/shared/common/routes';
 import { reducers } from 'app/shared/common/meta.reducer';
+import { HomeComponent } from 'app/home/components/home.component';
+import { VehicleMapComponent } from 'app/vehicle/components/vehicle-map/vehicle-map.component';
+import { VehicleTableComponent } from 'app/vehicle/components/vehicle-table/vehicle-table.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    VehicleMapComponent,
+    VehicleTableComponent
   ],
   imports: [
     BrowserModule,
