@@ -7,3 +7,4 @@ export const getContentState = (state: AppState) => state.vehicle;
 
 export const isAwaitingVehicles = createSelector(getContentState, fromVehicle.isAwaitingVehicles);
 export const vehicleData = createSelector(getContentState, fromVehicle.vehicleData);
+export const getCurrLocation = createSelector(getContentState, fromVehicle.getCurrLocation);

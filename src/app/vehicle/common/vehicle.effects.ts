@@ -44,5 +44,20 @@ export class VehicleEffects {
                 });
         });
 
+        @Effect()
+        updateCurrLocation$: Observable<Action> = this.actions$
+            .ofType(vehicleAcions.VehicleActionTypes.LOAD_VEHICLES)
+            .map(toPayload)
+            .switchMap(payload => {
+                if ('geolocation' in navigator) {
+                    return Observable.create(observer => navigator.geolocation
+                        .getCurrentPosition(position => {
+                            observer.next(new vehicleAcions.UpdateCurrLocAction(position.coords));
+                            observer.complete();
+                        }));
+                }
+                return Observable.of({type: ''});
+            });
+
 
 }

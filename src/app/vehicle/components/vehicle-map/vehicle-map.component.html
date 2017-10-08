@@ -1,3 +1,5 @@
-<p>
-  vehicle-map works!
-</p>
+<div *ngIf="currLoc">
+  <agm-map class="vehicle-map" [latitude]="currLoc.latitude" [longitude]="currLoc.longitude" #vehicleMap>
+    <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude"></agm-marker>
+  </agm-map>
+</div>

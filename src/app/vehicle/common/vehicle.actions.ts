@@ -4,7 +4,8 @@ import { Vehicle } from 'app/vehicle/models/vehicle';
 export const VehicleActionTypes = {
     STOP_WAITING: '[Vehicle] Stop Waiting',
     LOAD_VEHICLES: '[Vehicle] Load Vehicles',
-    LOADED_VEHICLES: '[Vehicle] Loaded Vehicles'
+    LOADED_VEHICLES: '[Vehicle] Loaded Vehicles',
+    UPDATE_CURR_LOC: '[Vehicle] Update Current Location'
 };
 
 export class LoadVehiclesAction implements Action {
@@ -25,7 +26,14 @@ export class StopWaitingAction implements Action {
     }
 }
 
+export class UpdateCurrLocAction implements Action {
+    readonly type = VehicleActionTypes.UPDATE_CURR_LOC;
+    constructor(public payload: Object) {
+    }
+}
+
 export type VehicleActions =
     LoadVehiclesAction |
     LoadedVehiclesAction |
-    StopWaitingAction;
+    StopWaitingAction |
+    UpdateCurrLocAction;
