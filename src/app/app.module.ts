@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatSidenavModule, MatTableModule, MatPaginatorModule, 
+import {MatButtonModule, MatSidenavModule, MatTableModule, MatPaginatorModule,
   MatSortModule, MatToolbarModule} from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { RouterModule } from '@angular/router';
 
@@ -9,6 +11,7 @@ import {StoreModule} from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 import { AppComponent } from 'app/app.component';
 import { routes } from 'app/shared/common/routes';
@@ -33,6 +36,7 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     MatButtonModule,
     MatSidenavModule,
@@ -40,7 +44,9 @@ import { HttpModule } from '@angular/http';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    FlexLayoutModule,
     CdkTableModule,
+    AgmJsMarkerClustererModule,
     StoreModule.forRoot(reducers),
     RouterModule.forRoot(
       routes,

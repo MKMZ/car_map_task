@@ -25,7 +25,7 @@ export class VehicleEffects {
                     return Observable.of(new vehicleAcions.LoadVehiclesAction({}));
                 }
                 default:
-                    return null;
+                    return Observable.of({type: ''});
             }
         });
 

@@ -1,5 +1,7 @@
 <div *ngIf="currLoc">
   <agm-map class="vehicle-map">
-    <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude"></agm-marker>
+    <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+      <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude"></agm-marker>        
+    </agm-marker-cluster>
   </agm-map>
 </div>

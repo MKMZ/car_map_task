@@ -23,11 +23,8 @@ export class VehicleComponent implements OnInit {
   constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {
-    this.lat = 51.678418;
-    this.lng = 7.809007;
     this.vehicles = this.store.select(vehicleSelectors.vehicleData);
     this.currLoc = this.store.select(vehicleSelectors.getCurrLocation);
-
   }
 
 }

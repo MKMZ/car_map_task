@@ -1,3 +1,8 @@
-<div>
-  <app-vehicle-map [vehicles]="vehicles" [currLoc]="currLoc"></app-vehicle-map>
+<div fxLayout="row">
+        <div class="view-side" fxFlex>
+          <app-vehicle-table [vehicles]="vehicles"></app-vehicle-table>
+        </div>
+        <div class="view-side" fxFlex>
+          <app-vehicle-map [vehicles]="vehicles" [currLoc]="currLoc"></app-vehicle-map>
+        </div>
 </div>

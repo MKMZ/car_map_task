@@ -1,0 +1,9 @@
+.vehicle-table {
+    display: flex;
+    flex-direction: column;
+  }
+
+.vehicle-table-cell {
+  text-align: left; 
+  padding: 10px 10px 10px 0;
+}
