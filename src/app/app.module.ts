@@ -15,13 +15,17 @@ import { reducers } from 'app/shared/common/meta.reducer';
 import { HomeComponent } from 'app/home/components/home.component';
 import { VehicleMapComponent } from 'app/vehicle/components/vehicle-map/vehicle-map.component';
 import { VehicleTableComponent } from 'app/vehicle/components/vehicle-table/vehicle-table.component';
+import { PageNotFoundComponent } from 'app/errors/components/page-not-found/page-not-found.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     VehicleMapComponent,
-    VehicleTableComponent
+    VehicleTableComponent,
+    PageNotFoundComponent,
+    VehicleComponent
   ],
   imports: [
     BrowserModule,
