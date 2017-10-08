@@ -29,16 +29,4 @@ export class VehicleMapComponent implements AfterViewInit {
     }
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log("ngOnChanges");
-  //   console.log(changes);
-  //   console.log(this.agmMap);
-  //   // if (changes.currLoc) {
-  //   //   this.agmMap.longitude = changes.currLoc.currentValue.longitude;
-  //   //   this.agmMap.latitude = changes.currLoc.currentValue.latitude;
-  //   //   this.agmMap.triggerResize();
-  //   // }
-
-  // }
-
 }
