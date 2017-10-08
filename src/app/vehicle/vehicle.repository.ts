@@ -11,11 +11,11 @@ export class VehicleRepository  {
   getCarMap(): Observable<Vehicle[]> {
     const reqUrl = `${this.rootUrl}/map`;
     return this.http.get(reqUrl, {})
-      .map(res => res.json()
+      .map(res => res.json().objects
         .filter(item => item && item.discriminator === 'vehicle')
         .map(item => new Vehicle(item))
       ).catch(error => Observable.throw(
-        error.json().error || 'Error during the process of getting Cars\' Map'
+        error || 'Error during the process of getting Cars\' Map'
       ));
   }
 }

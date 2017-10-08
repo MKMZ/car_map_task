@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import {StoreModule} from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from 'app/app.component';
 import { routes } from 'app/shared/common/routes';
@@ -16,7 +17,10 @@ import { HomeComponent } from 'app/home/components/home.component';
 import { VehicleMapComponent } from 'app/vehicle/components/vehicle-map/vehicle-map.component';
 import { VehicleTableComponent } from 'app/vehicle/components/vehicle-table/vehicle-table.component';
 import { PageNotFoundComponent } from 'app/errors/components/page-not-found/page-not-found.component';
-import { VehicleComponent } from './vehicle/vehicle.component';
+import { VehicleComponent } from 'app/vehicle/components/vehicle/vehicle.component';
+import { VehicleEffects } from 'app/vehicle/common/vehicle.effects';
+import { VehicleRepository } from 'app/vehicle/vehicle.repository';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
@@ -43,9 +48,15 @@ import { VehicleComponent } from './vehicle/vehicle.component';
     ),
     StoreRouterConnectingModule,
     EffectsModule.forRoot([
-    ])
+      VehicleEffects
+    ]),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBpt1h-z_m9R4pf6UIrDYk1uQiyY7_U9cs'
+    })
   ],
-  providers: [],
+  providers: [
+    VehicleRepository
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

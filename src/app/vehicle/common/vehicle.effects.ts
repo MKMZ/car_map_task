@@ -29,18 +29,20 @@ export class VehicleEffects {
             }
         });
 
-        @Effect()
-        loadPosts$: Observable<Action> = this.actions$
-          .ofType(vehicleAcions.VehicleActionTypes.LOAD_VEHICLES)
-          .map(toPayload)
-          .switchMap(payload => {
-              return this.vehicleRepository.getCarMap()
-                  .map(res => new vehicleAcions.LoadedVehiclesAction(res))
-                  .catch((error) => {
-                    //   this.notificationsService.error('Error during the process of getting Posts');
-                      return Observable.of(new vehicleAcions.StopWaitingAction({}));
-                  });
-          });
+    @Effect()
+    loadPosts$: Observable<Action> = this.actions$
+        .ofType(vehicleAcions.VehicleActionTypes.LOAD_VEHICLES)
+        .map(toPayload)
+        .switchMap(payload => {
+            return this.vehicleRepository.getCarMap()
+                .map(res => {
+                    return new vehicleAcions.LoadedVehiclesAction(res);
+                })
+                .catch((error) => {
+                //   this.notificationsService.error('Error during the process of getting Posts');
+                    return Observable.of(new vehicleAcions.StopWaitingAction({}));
+                });
+        });
 
 
 }
