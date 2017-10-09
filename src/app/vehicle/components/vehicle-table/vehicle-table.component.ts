@@ -41,7 +41,6 @@ export class VehicleTableComponent extends VehiclePanelComponent implements OnIn
     );
     this.displayColumns = [
       new TableColumn('Name', 'name'),
-      // new TableColumn('Description', 'description'),
       new TableColumn('Plates Number', 'platesNumber'),
       new TableColumn('Side Number', 'sideNumber'),
       new TableColumn('Type', 'type'),
@@ -53,6 +52,5 @@ export class VehicleTableComponent extends VehiclePanelComponent implements OnIn
 
     this.subSelected = this.selectedVehicle.subscribe(vehicle => this.selectedValue = vehicle);
   }
-
 
 }

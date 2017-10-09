@@ -1,8 +1,8 @@
-<agm-map class="vehicle-map" [zoom]="20">
+<agm-map class="vehicle-map" [zoom]="18">
   <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
     <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude" 
-    [title]="vehicle.name" (markerClick)="onSelectVehicle(vehicle)">
-      <agm-snazzy-info-window [maxWidth]="300" [closeWhenOthersOpen]="true" [isOpen]="compareVehicles(selectedRow, vehicle)">
+    [title]="vehicle.name" (markerClick)="onSelectVehicle(vehicle)" [iconUrl]="markerColors[vehicle.status]">
+      <agm-snazzy-info-window [maxWidth]="300" [closeWhenOthersOpen]="true">
         <ng-template>
           <div>
             <span>

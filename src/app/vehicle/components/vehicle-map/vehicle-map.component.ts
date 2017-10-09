@@ -5,6 +5,7 @@ import { MapLocation } from 'app/shared/models/map-location';
 import { AgmMap } from '@agm/core';
 import { Subscription } from 'rxjs/Subscription';
 import { VehiclePanelComponent } from 'app/vehicle/components/abstracts/vehicle-panel.component';
+import { VehicleMarkerIcon } from 'app/vehicle/types/vehicle-marker-icon';
 
 @Component({
   selector: 'app-vehicle-map',
@@ -19,6 +20,7 @@ export class VehicleMapComponent extends VehiclePanelComponent implements AfterV
 
   @ViewChild(AgmMap) agmMap: AgmMap;
 
+  public markerColors = VehicleMarkerIcon;
   private onLocChanged: Subscription;
 
   constructor() {

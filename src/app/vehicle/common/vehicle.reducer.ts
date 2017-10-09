@@ -35,8 +35,14 @@ export function reducer(state = initialState, action: vehicleActions.VehicleActi
             });
         }
         case vehicleActions.VehicleActionTypes.SELECT_VEHICLE: {
+            if (!state.selectedVehicle ||
+                (action.payload && state.selectedVehicle.id !== (<Vehicle> action.payload).id)) {
+                return Object.assign({}, state, {
+                    selectedVehicle: action.payload
+                });
+            }
             return Object.assign({}, state, {
-                selectedVehicle: action.payload
+                selectedVehicle: null
             });
         }
         default:

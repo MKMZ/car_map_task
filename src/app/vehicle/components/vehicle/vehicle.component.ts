@@ -33,8 +33,6 @@ export class VehicleComponent implements OnInit {
   }
 
   selectVehicle(selected: Vehicle) {
-    console.log("selectVehicle");
-    console.log(selected);
     this.store.dispatch(new vehicleActions.SelectVehicleAction(selected));
   }
 
