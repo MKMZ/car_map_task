@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {MatButtonModule, MatSidenavModule, MatTableModule, MatPaginatorModule,
-  MatSortModule, MatToolbarModule} from '@angular/material';
+  MatSortModule, MatToolbarModule, MatTooltipModule} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CdkTableModule } from '@angular/cdk/table';
 import { RouterModule } from '@angular/router';
@@ -44,6 +44,7 @@ import { HttpModule } from '@angular/http';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatTooltipModule,
     FlexLayoutModule,
     CdkTableModule,
     AgmJsMarkerClustererModule,

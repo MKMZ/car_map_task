@@ -36,4 +36,9 @@ export class VehicleMapComponent implements AfterViewInit, OnDestroy {
     this.onLocChanged.unsubscribe();
   }
 
+  onMarkerClicked(marker) {
+    console.log("onMarkerClicked");
+    console.log(marker);
+  }
+
 }
