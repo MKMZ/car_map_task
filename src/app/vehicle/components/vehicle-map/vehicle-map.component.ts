@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, ViewChild, ElementRef, AfterViewInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, Input, SimpleChanges, ViewChild, ElementRef, AfterViewInit, OnDestroy, Output, EventEmitter, AfterViewChecked } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Vehicle } from 'app/vehicle/models/vehicle';
 import { MapLocation } from 'app/shared/models/map-location';
@@ -12,7 +12,7 @@ import { VehicleMarkerIcon } from 'app/vehicle/types/vehicle-marker-icon';
   templateUrl: './vehicle-map.component.html',
   styleUrls: ['./vehicle-map.component.css']
 })
-export class VehicleMapComponent extends VehiclePanelComponent implements AfterViewInit, OnDestroy {
+export class VehicleMapComponent extends VehiclePanelComponent implements AfterViewInit, AfterViewChecked, OnDestroy {
 
   @Input() vehicles: Vehicle[];
   @Input() currLoc: Observable<MapLocation>;
@@ -45,6 +45,10 @@ export class VehicleMapComponent extends VehiclePanelComponent implements AfterV
         this.agmMap.triggerResize();
       }
     });
+  }
+
+  ngAfterViewChecked(): void {
+    this.agmMap.triggerResize();
   }
 
   ngOnDestroy(): void {
