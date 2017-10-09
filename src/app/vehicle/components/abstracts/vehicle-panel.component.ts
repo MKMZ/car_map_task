@@ -16,6 +16,8 @@ export abstract class VehiclePanelComponent implements OnDestroy {
     }
 
     onSelectVehicle(selected: Vehicle) {
+        console.log("onSelectVehicle");
+        console.log(selected);
         this.selectVehicle.emit(selected);
     }
 

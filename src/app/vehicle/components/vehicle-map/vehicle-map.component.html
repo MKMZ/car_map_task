@@ -1,28 +1,27 @@
-<div *ngIf="currLoc">
-  <agm-map class="vehicle-map">
-    <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
-      <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude" 
-      [title]="vehicle.name" (markerClicked)="onSelectVehicle(vehicle)">
-        <agm-snazzy-info-window [maxWidth]="300" [closeWhenOthersOpen]="true" [isOpen]="compareVehicles(selectedRow, vehicle)">
-          <ng-template>
-            <div>
-              <span>
-                Name: {{vehicle.name}}
-              </span>
-            </div>
-            <div>
-              <span>
-                Plates Number: {{vehicle.platesNumber}}
-              </span>
-            </div>            
-            <div>
-              <span>
-                Status: {{vehicle.status}}
-              </span>
-            </div>
-          </ng-template>
-        </agm-snazzy-info-window>
-      </agm-marker>        
-    </agm-marker-cluster>
-  </agm-map>
-</div>
+<agm-map class="vehicle-map" [zoom]="20">
+  <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+    <agm-marker *ngFor="let vehicle of vehicles | async" [latitude]="vehicle.location.latitude" [longitude]="vehicle.location.longitude" 
+    [title]="vehicle.name" (markerClick)="onSelectVehicle(vehicle)">
+      <agm-snazzy-info-window [maxWidth]="300" [closeWhenOthersOpen]="true" [isOpen]="compareVehicles(selectedRow, vehicle)">
+        <ng-template>
+          <div>
+            <span>
+              Name: {{vehicle.name}}
+            </span>
+          </div>
+          <div>
+            <span>
+              Plates Number: {{vehicle.platesNumber}}
+            </span>
+          </div>            
+          <div>
+            <span>
+              Status: {{vehicle.status}}
+            </span>
+          </div>
+        </ng-template>
+      </agm-snazzy-info-window>
+    </agm-marker>        
+  </agm-marker-cluster>
+</agm-map>
+

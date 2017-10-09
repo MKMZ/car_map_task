@@ -1,10 +1,10 @@
 <div fxLayout="row">
-        <div class="view-side" fxFlex>
+        <div class="view-side" fxFlex="40%">
           <app-vehicle-table [vehicles]="vehicles" [selectedVehicle]="selectedVehicle"
           (selectVehicle)="selectVehicle($event)" ></app-vehicle-table>
         </div>
-        <div class="view-side" fxFlex>
-          <app-vehicle-map [vehicles]="vehicles" [currLoc]="currLoc" [selectedVehicle]="selectedVehicle"
+        <div class="view-side" fxFlex="60%">
+          <app-vehicle-map class="vehicle-map" [vehicles]="vehicles" [currLoc]="currLoc" [selectedVehicle]="selectedVehicle"
           (selectVehicle)="selectVehicle($event)"></app-vehicle-map>
         </div>
 </div>

@@ -19,7 +19,6 @@ export class VehicleMapComponent extends VehiclePanelComponent implements AfterV
 
   @ViewChild(AgmMap) agmMap: AgmMap;
 
-  public selectedMarker: Vehicle;
   private onLocChanged: Subscription;
 
   constructor() {
@@ -37,7 +36,12 @@ export class VehicleMapComponent extends VehiclePanelComponent implements AfterV
       });
     }
     this.subSelected = this.selectedVehicle.subscribe(vehicle => {
-      this.selectedMarker = vehicle;
+      if (vehicle) {
+        this.selectedValue = vehicle;
+        this.agmMap.latitude = vehicle.location.latitude;
+        this.agmMap.longitude = vehicle.location.longitude;
+        this.agmMap.triggerResize();
+      }
     });
   }
 
