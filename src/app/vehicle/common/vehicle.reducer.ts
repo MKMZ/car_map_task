@@ -8,6 +8,7 @@ export interface VehicleState {
     awaitingSize: number;
     vehicles: Vehicle[];
     currLocation: MapLocation;
+    selectedVehicle: Vehicle;
 }
 
 export function reducer(state = initialState, action: vehicleActions.VehicleActions): VehicleState {
@@ -33,6 +34,11 @@ export function reducer(state = initialState, action: vehicleActions.VehicleActi
                 currLocation: action.payload
             });
         }
+        case vehicleActions.VehicleActionTypes.SELECT_VEHICLE: {
+            return Object.assign({}, state, {
+                selectedVehicle: action.payload
+            });
+        }
         default:
             return state;
     }
@@ -41,10 +47,11 @@ export function reducer(state = initialState, action: vehicleActions.VehicleActi
 const initialState: VehicleState = {
     awaitingSize: 0,
     vehicles: null,
-    currLocation: null
+    currLocation: null,
+    selectedVehicle: null
 };
 
 export const isAwaitingVehicles = (state: VehicleState) => state.awaitingSize > 0;
 export const vehicleData = (state: VehicleState) => state.vehicles;
 export const getCurrLocation = (state: VehicleState) => state.currLocation;
-
+export const getSelectedVehicle = (state: VehicleState) => state.selectedVehicle;

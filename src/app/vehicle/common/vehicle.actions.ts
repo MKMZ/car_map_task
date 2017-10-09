@@ -5,7 +5,8 @@ export const VehicleActionTypes = {
     STOP_WAITING: '[Vehicle] Stop Waiting',
     LOAD_VEHICLES: '[Vehicle] Load Vehicles',
     LOADED_VEHICLES: '[Vehicle] Loaded Vehicles',
-    UPDATE_CURR_LOC: '[Vehicle] Update Current Location'
+    UPDATE_CURR_LOC: '[Vehicle] Update Current Location',
+    SELECT_VEHICLE: '[Vehicle] Select Vehicle'
 };
 
 export class LoadVehiclesAction implements Action {
@@ -32,8 +33,15 @@ export class UpdateCurrLocAction implements Action {
     }
 }
 
+export class SelectVehicleAction implements Action {
+    readonly type = VehicleActionTypes.SELECT_VEHICLE;
+    constructor(public payload: Object) {
+    }
+}
+
 export type VehicleActions =
     LoadVehiclesAction |
     LoadedVehiclesAction |
     StopWaitingAction |
-    UpdateCurrLocAction;
+    UpdateCurrLocAction |
+    SelectVehicleAction;
