@@ -1,0 +1,19 @@
+<div class="vehicle-table">
+  <md-table #table [dataSource]="dataSource" mdSort>
+      
+      <ng-container *ngFor="let col of displayColumns" mdColumnDef="{{col.key}}">
+        <md-header-cell style="width: 100%;" *mdHeaderCellDef md-sort-header="{{col.key}}"> {{col.name}} </md-header-cell>
+        <md-cell class="vehicle-table-cell" *mdCellDef="let row" > {{ row[col.key] }} </md-cell>
+      </ng-container>
+      
+          <md-header-row *mdHeaderRowDef="columnKeys"></md-header-row>
+          <md-row *mdRowDef="let row; columns: columnKeys;" 
+          [ngClass]="{'row-highlight': compareVehicles(selectedValue, row)}" (click)="onSelectVehicle(row)"></md-row>
+        </md-table>
+    <md-paginator #paginator
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25, 100]">
+    </md-paginator>
+</div>
+

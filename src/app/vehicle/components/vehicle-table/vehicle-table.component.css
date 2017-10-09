@@ -1,0 +1,13 @@
+.vehicle-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.vehicle-table-cell {
+  text-align: left; 
+  padding: 10px 10px 10px 0;
+}
+.row-highlight {
+  background-color: #A9A9A9;
+}
