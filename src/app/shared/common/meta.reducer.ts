@@ -22,3 +22,4 @@ export function metaReducer(state: any, action: any) {
 }
 
 const developmentReducer: Function = compose(storeLogger(), combineReducers)(reducers);
+

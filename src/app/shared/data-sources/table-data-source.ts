@@ -37,6 +37,7 @@ export class TableDataSource<T> extends DataSource<any> {
             if (arr instanceof Array) {
                 this.data = arr;
                 this.dataLength = this.data.length;
+                this.updatePaginator();
             }
             let result = this.data ? this.data.slice(0) : null;
             if (result) {
@@ -81,6 +82,10 @@ export class TableDataSource<T> extends DataSource<any> {
             });
         }
         return arr;
+    }
+
+    updatePaginator() {
+        this._paginator.length = this.dataLength;
     }
 
     paginateData(arr: T[]): T[] {

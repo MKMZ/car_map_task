@@ -25,6 +25,7 @@ import { VehicleComponent } from 'app/vehicle/components/vehicle/vehicle.compone
 import { VehicleEffects } from 'app/vehicle/common/vehicle.effects';
 import { VehicleRepository } from 'app/vehicle/vehicle.repository';
 import { HttpModule } from '@angular/http';
+import { KeysPipe } from 'app/shared/pipes/keys-pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HttpModule } from '@angular/http';
     VehicleMapComponent,
     VehicleTableComponent,
     PageNotFoundComponent,
-    VehicleComponent
+    VehicleComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
