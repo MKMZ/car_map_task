@@ -12,6 +12,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EffectsModule } from '@ngrx/effects';
 import { AgmCoreModule } from '@agm/core';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 import { AppComponent } from 'app/app.component';
 import { routes } from 'app/shared/common/routes';
@@ -48,6 +49,7 @@ import { HttpModule } from '@angular/http';
     FlexLayoutModule,
     CdkTableModule,
     AgmJsMarkerClustererModule,
+    AgmSnazzyInfoWindowModule,
     StoreModule.forRoot(reducers),
     RouterModule.forRoot(
       routes,
