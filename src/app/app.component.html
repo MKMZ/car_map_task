@@ -1,15 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<md-sidenav-container fullscreen>
-    <md-toolbar color="primary">
-        <button md-button *ngFor="let entry of navPaths | keys" 
+<mat-sidenav-container fullscreen>
+    <mat-toolbar color="primary">
+        <button mat-button *ngFor="let entry of navPaths | keys" 
         [disabled]="isLinkActive(entry.value)" [routerLink]="entry.value">
             {{entry.key}}
         </button>
-    </md-toolbar>
+    </mat-toolbar>
     <div class="main-router">
         <router-outlet></router-outlet>
     </div>
-</md-sidenav-container> 
+</mat-sidenav-container> 
 
 
 

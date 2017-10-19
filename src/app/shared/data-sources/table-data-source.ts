@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs/Observable';
 import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { MdPaginator, MdSort } from '@angular/material';
+import { MatPaginator, MatSort } from '@angular/material';
 
 
 
@@ -15,8 +15,8 @@ export class TableDataSource<T> extends DataSource<any> {
     set filter(filter: string) { this._filterChange.next(filter); }
 
     constructor(private _database: Observable<T[]>,
-        private _paginator: MdPaginator,
-        private _sort: MdSort,
+        private _paginator: MatPaginator,
+        private _sort: MatSort,
         private _filterFields: string[]) {
         super();
         this.dataLength = 0;
