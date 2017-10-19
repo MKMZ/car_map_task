@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Vehicle } from 'app/vehicle/models/vehicle';
-import { MdPaginator, MdSort } from '@angular/material';
+import { MatPaginator, MatSort } from '@angular/material';
 import { TableDataSource } from 'app/shared/data-sources/table-data-source';
 import { TableColumn } from 'app/shared/models/table-column';
 import { Observable } from 'rxjs/Observable';
@@ -19,8 +19,8 @@ export class VehicleTableComponent extends VehiclePanelComponent implements OnIn
   @Input() selectedVehicle: Observable<Vehicle>;
   @Output() selectVehicle: EventEmitter<Vehicle> = new EventEmitter<Vehicle>();
 
-  @ViewChild(MdPaginator) paginator: MdPaginator;
-  @ViewChild(MdSort) sort: MdSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   public dataSource: TableDataSource<Vehicle>;
   public displayColumns: TableColumn[] | null;
